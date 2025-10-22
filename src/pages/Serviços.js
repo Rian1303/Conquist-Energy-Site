@@ -1,72 +1,70 @@
 import React from "react";
-import { FaHome, FaBuilding, FaTools, FaProjectDiagram, FaChartLine, FaPlug } from "react-icons/fa";
+import Slider from "react-slick";
+
+// Importando imagens
+import projeto1 from "../assets/images/projeto1.png";
+import projeto2 from "../assets/images/projeto2.jpg";
+import projeto3 from "../assets/images/projeto3.jpg";
 
 function Servicos() {
+  const projetos = [
+    {
+      img: projeto1,
+      titulo: "Parque Eolico de Caitete",
+      descricao: "Execução de serviços de Operação e Manutenção no parque eólico de Caitete, Bahia, para nossa empresa parceira Ms Servicos"
+    },
+    {
+      img: projeto2,
+      titulo: "Usina Solo - Geração Distribuída",
+      descricao: "Projeto de uma usina em solo na cidade de Horizonte, fornecendo energia limpa e gerando rendimentos ao cliente."
+    },
+    {
+      img: projeto3,
+      titulo: "Projeto residencial em Horizonte",
+      descricao: "Instalação de sistema fotovoltaico residencial, aumentando eficiência energética e gerando economia para o cliente."
+    }
+  ];
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1
+        }
+      }
+    ]
+  };
+
   return (
     <section id="servicos" className="services">
-      <h2 className="section-title">Nossos Serviços</h2>
-      <div className="services-grid">
-        {/* Linha 1 */}
-        <div className="service-card service-residencial">
-          <div className="service-icon"><FaHome size={40} /></div>
-          <h3>Energia Solar Residencial</h3>
-          <p>
-            Instalação completa de sistemas solares para residências e condomínios,
-            garantindo economia, sustentabilidade e máxima eficiência energética.
-            Acompanhamento técnico desde o projeto até a entrega final, com garantia de qualidade.
-          </p>
-        </div>
-
-        <div className="service-card service-distribuida">
-          <div className="service-icon"><FaBuilding size={40} /></div>
-          <h3>Geração Distribuída</h3>
-          <p>
-            Projetos de micro e minigeração para empresas, reduzindo custos e
-            otimizando o retorno sobre o investimento. Inclui análise de viabilidade,
-            acompanhamento do processo de conexão e manutenção preventiva.
-          </p>
-        </div>
-
-        <div className="service-card service-om">
-          <div className="service-icon"><FaTools size={40} /></div>
-          <h3>Obra & Manutenção (O&M)</h3>
-          <p>
-            Execução de obras, instalações elétricas e manutenção de sistemas
-            solares e eólicos, garantindo operação contínua e eficiente.
-            Inclui comissionamento de aerogeradores, instalação de inversores e módulos fotovoltaicos.
-          </p>
-        </div>
-
-        {/* Linha 2 */}
-        <div className="service-card service-gestao-obras">
-          <div className="service-icon"><FaProjectDiagram size={40} /></div>
-          <h3>Gestão de Obras</h3>
-          <p>
-            Gerenciamento completo de projetos de micro e minigeração distribuída e aerogeradores:
-            planejamento e acompanhamento de cronogramas, gestão de equipes técnicas,
-            controle de qualidade, conformidade com normas, uso de softwares especializados
-            (Smartsheet e Microsoft 365) para monitoramento, análise de dados e emissão de relatórios.
-          </p>
-        </div>
-
-        <div className="service-card service-consultoria">
-          <div className="service-icon"><FaChartLine size={40} /></div>
-          <h3>Consultoria e Eficiência Energética</h3>
-          <p>
-            Inspeção e análise energética da empresa, oferecendo soluções para otimização
-            do consumo e redução de custos, aumentando a eficiência operacional.
-          </p>
-        </div>
-
-        <div className="service-card service-instalacoes">
-          <div className="service-icon"><FaPlug size={40} /></div>
-          <h3>Instalações Elétricas</h3>
-          <p>
-            Projetos, execução e manutenção de instalações de baixa e média tensão,
-            incluindo inspeções, supervisão e equipe especializada para máxima confiabilidade.
-          </p>
-        </div>
-      </div>
+      <h2 className="section-title">Serviços & Projetos</h2>
+      <Slider {...settings}>
+        {projetos.map((projeto, index) => (
+          <div key={index} className="service-card">
+            <img
+              src={projeto.img}
+              alt={projeto.titulo}
+              style={{
+                borderRadius: "12px",
+                width: "100%",
+                height: "180px",
+                objectFit: "cover",
+                marginBottom: "1rem"
+              }}
+            />
+            <h3>{projeto.titulo}</h3>
+            <p>{projeto.descricao}</p>
+          </div>
+        ))}
+      </Slider>
     </section>
   );
 }

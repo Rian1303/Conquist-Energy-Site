@@ -1,9 +1,35 @@
-import React, { useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
+import React, { useState, useEffect } from "react";
+import logo from "../assets/images/conquist-logo.png"; // ajuste o caminho
 
 function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const toggleMenu = () => setMenuOpen(!menuOpen);
+  const [collapsed, setCollapsed] = useState(false);
+  const [expanded, setExpanded] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const homeSection = document.getElementById("home");
+      if (!homeSection) return;
+
+      const homeBottom = homeSection.offsetTop + homeSection.offsetHeight;
+      const isOutOfHome = window.scrollY > homeBottom - 80;
+
+      if (isOutOfHome && expanded) {
+        setCollapsed(true);
+        setExpanded(false);
+      } else if (!isOutOfHome && !expanded) {
+        setCollapsed(false);
+        setExpanded(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [expanded]);
+
+  const toggleNavbar = () => {
+    setCollapsed(!collapsed);
+    setExpanded(!expanded);
+  };
 
   const links = [
     { name: "Home", href: "#home" },
@@ -14,16 +40,15 @@ function Navbar() {
   ];
 
   return (
-    <nav className="navbar">
-      <div className="hamburger" onClick={toggleMenu}>
-        {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+    <nav className={`navbar ${collapsed ? "collapsed" : "expanded"}`}>
+      <div className="nav-logo" onClick={toggleNavbar}>
+        <img src={logo} alt="Logo" />
       </div>
-      <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
+
+      <ul className="nav-links">
         {links.map((link, i) => (
           <li key={i}>
-            <a href={link.href} onClick={() => setMenuOpen(false)}>
-              {link.name}
-            </a>
+            <a href={link.href}>{link.name}</a>
           </li>
         ))}
       </ul>

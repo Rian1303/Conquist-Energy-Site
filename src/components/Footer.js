@@ -9,6 +9,7 @@ function Footer() {
           <h4>Contato</h4>
           <p>Email: comercial@conquistenergy.com.br</p>
           <p>Tel: (85) 99202-9902</p>
+          <p>Endereço: Av. Santos Dumont, 6740 - Cocó, Fortaleza - CE, 60192-022</p>
         </div>
         <div className="footer-col">
           <h4>Redes Sociais</h4>
@@ -30,7 +31,7 @@ function Footer() {
         </div>
       </div>
       <div className="footer-credit">
-    <p>Site desenvolvido e mantido pela <strong>Croma Company – Dep. de Software</strong></p>
+    <p>Site desenvolvido e mantido por <strong>Rian Pluma | Dev. FullStack</strong></p>
   </div>
 
       <div className="footer-bottom">
