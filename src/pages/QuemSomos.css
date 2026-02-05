@@ -1,0 +1,157 @@
+/* ================================
+   Quem Somos — Conquist Energy
+================================ */
+
+.sobre {
+  background-color: var(--fundo);
+  padding: 5rem 2rem;
+}
+
+.sobre-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ================================
+   Texto principal
+================================ */
+
+.sobre-texto {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.sobre h2 {
+  font-size: 2.6rem;
+  color: var(--azul);
+  font-weight: 700;
+}
+
+.sobre p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--cinza);
+  max-width: 900px;
+}
+
+/* ================================
+   Missão e Visão
+================================ */
+
+.missao,
+.visao {
+  background-color: var(--branco);
+  border-left: 5px solid var(--laranja);
+  padding: 1.8rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.missao h3,
+.visao h3 {
+  color: var(--azul);
+  font-size: 1.4rem;
+  margin-bottom: 0.6rem;
+}
+
+.missao p,
+.visao p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--cinza);
+}
+
+/* ================================
+   Cards institucionais
+================================ */
+
+.sobre-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.sobre-card {
+  background-color: var(--branco);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  flex: 1 1 260px;
+  max-width: 320px;
+  text-align: center;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.1);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.sobre-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* ================================
+   Ícones
+================================ */
+
+.sobre-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.icon-verde {
+  color: #25d366;
+}
+
+.icon-laranja {
+  color: var(--laranja);
+}
+
+.icon-azul {
+  color: var(--azul);
+}
+
+/* ================================
+   Texto dos cards
+================================ */
+
+.sobre-card h3 {
+  font-size: 1.3rem;
+  color: var(--cinza);
+  margin-bottom: 0.6rem;
+}
+
+.sobre-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--cinza);
+}
+
+/* ================================
+   Responsividade
+================================ */
+
+@media (max-width: 768px) {
+  .sobre {
+    padding: 4rem 1.5rem;
+  }
+
+  .sobre h2 {
+    font-size: 2.1rem;
+    text-align: center;
+  }
+
+  .sobre p {
+    text-align: center;
+  }
+
+  .missao,
+  .visao {
+    padding: 1.5rem;
+  }
+
+  .sobre-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}

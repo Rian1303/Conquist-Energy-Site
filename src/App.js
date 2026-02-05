@@ -8,6 +8,13 @@ import Clientes from "./pages/Clientes";
 import Contato from "./pages/Contato";
 
 import "./App.css";
+import "./components/Navbar.css";
+import "./components/Footer.css";
+import "./pages/Home.css";
+import "./pages/QuemSomos.css";
+import "./pages/Serviços.css";
+import "./pages/Clientes.css";
+import "./pages/Contato.css";
 
 
 function App() {

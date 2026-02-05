@@ -2,6 +2,7 @@ import React from "react";
 import { FaTree } from "react-icons/fa";
 import { BsLampFill } from "react-icons/bs";
 import { FaHandshakeSimple } from "react-icons/fa6";
+import "./QuemSomos.css";
 
 function QuemSomos() {
   return (

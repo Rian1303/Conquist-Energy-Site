@@ -1,7 +1,8 @@
 import React from "react";
 import Slider from "react-slick";
+import "./Clientes.css";
 
-// Importação das imagens dos clientes
+// Logos
 import cliente1 from "../assets/images/cliente1.png";
 import cliente2 from "../assets/images/cliente2.png";
 import cliente3 from "../assets/images/cliente3.png";
@@ -13,12 +14,12 @@ import cliente8 from "../assets/images/cliente8.png";
 
 function Clientes() {
   const clientes = [
-    { nome: "Ms Serviços", logo: cliente1 },
-    { nome: "Grupo7", logo: cliente2 },
-    { nome: "L2M PowerEletronics", logo: cliente3 },
-    { nome: "3p Energia", logo: cliente4 },
+    { nome: "MS Serviços", logo: cliente1 },
+    { nome: "Grupo 7", logo: cliente2 },
+    { nome: "L2M Power Electronics", logo: cliente3 },
+    { nome: "3P Energia", logo: cliente4 },
     { nome: "GDSUN", logo: cliente5 },
-    { nome: "Quality Servicy Renovaveis", logo: cliente6 },
+    { nome: "Quality Serviços Renováveis", logo: cliente6 },
     { nome: "WindCraft", logo: cliente7 },
     { nome: "Helexia", logo: cliente8 },
   ];
@@ -26,12 +27,10 @@ function Clientes() {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 4000,
     slidesToShow: 4,
     slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 0,
-    cssEase: "linear",
+    swipe: true,
+    draggable: true,
     pauseOnHover: false,
     responsive: [
       { breakpoint: 1024, settings: { slidesToShow: 3 } },
@@ -42,24 +41,30 @@ function Clientes() {
 
   return (
     <section id="clientes" className="clientes">
-      <h2 className="section-title">Nossos Clientes</h2>
-      <Slider {...settings}>
-        {clientes.map((cliente, index) => (
-          <div key={index} className="cliente-card">
-            <img
-              src={cliente.logo}
-              alt={cliente.nome}
-              style={{
-                width: "100%",
-                height: "120px",
-                objectFit: "contain",
-                marginBottom: "1rem",
-              }}
-            />
-            <h3>{cliente.nome}</h3>
-          </div>
-        ))}
-      </Slider>
+      <div className="clientes-container">
+        <h2 className="section-title">Clientes & Parcerias Estratégicas</h2>
+
+        <p className="clientes-descricao">
+          Atuamos em conjunto com empresas parceiras e grandes players do setor energético,
+          entregando soluções eficientes em energia solar, geração distribuída e manutenção
+          especializada, sempre com foco em qualidade, segurança e resultados.
+        </p>
+
+        <Slider {...settings}>
+          {clientes.map((cliente, index) => (
+            <div key={index} className="cliente-slide">
+              <div className="cliente-card">
+                <img
+                  src={cliente.logo}
+                  alt={cliente.nome}
+                  className="cliente-logo"
+                />
+                <span className="cliente-nome">{cliente.nome}</span>
+              </div>
+            </div>
+          ))}
+        </Slider>
+      </div>
     </section>
   );
 }

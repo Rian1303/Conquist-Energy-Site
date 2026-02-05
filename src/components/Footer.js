@@ -8,13 +8,13 @@ function Footer() {
         <div className="footer-col">
           <h4>Contato</h4>
           <p>Email: comercial@conquistenergy.com.br</p>
-          <p>Tel: (85) 99202-9902</p>
+          <p>Tel: (85) 9 9406 - 0270</p>
           <p>Endereço: Av. Santos Dumont, 6740 - Cocó, Fortaleza - CE, 60192-022</p>
         </div>
         <div className="footer-col">
           <h4>Redes Sociais</h4>
           <div className="social-links">
-            <a href="https://wa.me/5585992029902" target="_blank" rel="noopener noreferrer"><FaWhatsapp /></a>
+            <a href="https://wa.me/5585994060270" target="_blank" rel="noopener noreferrer"><FaWhatsapp /></a>
             <a href="https://www.linkedin.com/company/conquistenergy" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
             <a href="https://www.instagram.com/conquistenergy" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
             <a href="mailto:comercial@conquistenergy.com.br"><FaEnvelope /></a>
@@ -31,11 +31,9 @@ function Footer() {
         </div>
       </div>
       <div className="footer-credit">
-    <p>Site desenvolvido e mantido por <strong>Rian Pluma | Dev. FullStack</strong></p>
   </div>
-
       <div className="footer-bottom">
-        <p>© 2025 Conquist Energy. Todos os direitos reservados.
+        <p>© 2026 Conquist Energy. Todos os direitos reservados. - Desenvolvido por Rian Pluma Dev. Full Stack.
         </p>
       </div>
     </footer>

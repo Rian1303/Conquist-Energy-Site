@@ -1,0 +1,98 @@
+/* ================================
+   Clientes & Parcerias
+================================ */
+
+.clientes {
+  background-color: var(--fundo);
+  padding: 5rem 2rem;
+}
+
+.clientes-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Texto institucional */
+.clientes-descricao {
+  max-width: 800px;
+  margin: 0 auto 3.5rem;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--cinza);
+}
+
+/* ================================
+   Slick ajustes
+================================ */
+
+.slick-slide {
+  padding: 0 15px;
+}
+
+.slick-list {
+  margin: 0 -15px;
+}
+
+/* ================================
+   Card do cliente
+================================ */
+
+.cliente-card {
+  background-color: var(--branco);
+  border-radius: 14px;
+  padding: 1.8rem 1.2rem;
+  height: 180px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.cliente-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.15);
+}
+
+/* Logo */
+.cliente-logo {
+  width: 100%;
+  max-width: 140px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 0.8rem;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.cliente-card:hover .cliente-logo {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+/* Nome */
+.cliente-nome {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--cinza);
+  text-align: center;
+}
+
+/* ================================
+   Responsividade
+================================ */
+
+@media (max-width: 768px) {
+  .clientes-descricao {
+    font-size: 0.95rem;
+  }
+
+  .cliente-card {
+    height: auto;
+    padding: 1.5rem 1rem;
+  }
+}

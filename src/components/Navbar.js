@@ -1,58 +1,47 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import logo from "../assets/images/conquist-logo.png"; // ajuste o caminho
+import "./Navbar.css";
 
 function Navbar() {
-  const [collapsed, setCollapsed] = useState(false);
-  const [expanded, setExpanded] = useState(true);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const homeSection = document.getElementById("home");
-      if (!homeSection) return;
-
-      const homeBottom = homeSection.offsetTop + homeSection.offsetHeight;
-      const isOutOfHome = window.scrollY > homeBottom - 80;
-
-      if (isOutOfHome && expanded) {
-        setCollapsed(true);
-        setExpanded(false);
-      } else if (!isOutOfHome && !expanded) {
-        setCollapsed(false);
-        setExpanded(true);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [expanded]);
-
-  const toggleNavbar = () => {
-    setCollapsed(!collapsed);
-    setExpanded(!expanded);
-  };
-
   const links = [
     { name: "Home", href: "#home" },
-    { name: "Quem Somos", href: "#quem-somos" },
+    { name: "Quem somos?", href: "#quem-somos" },
     { name: "Serviços", href: "#servicos" },
     { name: "Clientes", href: "#clientes" },
-    { name: "Contato", href: "#contato" },
   ];
 
   return (
-    <nav className={`navbar ${collapsed ? "collapsed" : "expanded"}`}>
-      <div className="nav-logo" onClick={toggleNavbar}>
-        <img src={logo} alt="Logo" />
-      </div>
+    <header className="navbar">
+      <div className="navbar-container">
 
-      <ul className="nav-links">
-        {links.map((link, i) => (
-          <li key={i}>
-            <a href={link.href}>{link.name}</a>
-          </li>
-        ))}
-      </ul>
-    </nav>
+        {/* Logo */}
+        <div className="navbar-logo">
+          <img src={logo} alt="Conquist Energy" />
+        </div>
+
+        {/* Menu central */}
+        <nav className="navbar-menu">
+          {links.map((link, i) => (
+            <a key={i} href={link.href}>
+              {link.name}
+            </a>
+          ))}
+        </nav>
+
+        {/* CTA */}
+        <div className="navbar-cta">
+          <a
+            href="https://wa.me/5585994060270"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Solicite seu orçamento via WhatsApp"
+          >
+            Solicite seu orçamento
+          </a>
+        </div>
+
+      </div>
+    </header>
   );
 }
 

@@ -1,5 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
+import "./Serviços.css";
 
 // Importando imagens
 import projeto1 from "../assets/images/projeto1.png";
@@ -10,13 +11,13 @@ function Servicos() {
   const projetos = [
     {
       img: projeto1,
-      titulo: "Parque Eolico de Caitete",
-      descricao: "Execução de serviços de Operação e Manutenção no parque eólico de Caitete, Bahia, para nossa empresa parceira Ms Servicos"
+      titulo: "Complexo Eólico do Alto Sertão",
+      descricao: "Execução de serviços de Operação e Manutenção no Complexo Eólico do Alto Sertão em Caitete, Bahia, para nossa empresa parceira Ms Servicos"
     },
     {
-      img: projeto2,
-      titulo: "Usina Solo - Geração Distribuída",
-      descricao: "Projeto de uma usina em solo na cidade de Horizonte, fornecendo energia limpa e gerando rendimentos ao cliente."
+    img: projeto2,
+    titulo: "Usina Solar de Geração Distribuída",
+    descricao: "Projeto de usina solar em solo no município de Horizonte, voltado à geração distribuída para consumo energético e investimento com retorno financeiro."
     },
     {
       img: projeto3,
@@ -49,17 +50,11 @@ function Servicos() {
       <Slider {...settings}>
         {projetos.map((projeto, index) => (
           <div key={index} className="service-card">
-            <img
-              src={projeto.img}
-              alt={projeto.titulo}
-              style={{
-                borderRadius: "12px",
-                width: "100%",
-                height: "180px",
-                objectFit: "cover",
-                marginBottom: "1rem"
-              }}
-            />
+                    <img
+                      src={projeto.img}
+                      alt={projeto.titulo}
+                      className="service-img"
+                    />
             <h3>{projeto.titulo}</h3>
             <p>{projeto.descricao}</p>
           </div>

@@ -1,0 +1,113 @@
+/* ===== RESET BÁSICO DA HOME ===== */
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+
+  /* Imagem de fundo */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 8%;
+  box-sizing: border-box;
+}
+
+/* ===== OVERLAY ESCURO ===== */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.45)
+  );
+  z-index: 1;
+}
+
+/* ===== CONTEÚDO ===== */
+.hero-content {
+  position: relative;
+  z-index: 2;
+
+  max-width: 620px;
+  color: #ffffff;
+}
+
+/* ===== TÍTULO ===== */
+.hero-content h1 {
+  font-size: 3rem;
+  line-height: 1.15;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+}
+
+/* ===== TEXTO ===== */
+.hero-content p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: #eaeaea;
+}
+
+/* ===== BOTÃO ===== */
+.btn-primary {
+  background: var(--laranja);
+  color: #000;
+  border: none;
+  padding: 14px 28px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 1024px) {
+  .hero {
+    padding: 0 6%;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 1.9rem;
+  }
+
+  .btn-primary {
+    width: 100%;
+  }
+}
