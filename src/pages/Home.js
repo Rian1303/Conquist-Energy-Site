@@ -35,7 +35,7 @@ function Home() {
                   aria-label="Solicite seu orçamento via WhatsApp"
                 >
                   <button className="btn-primary">
-                    Comece sua transformação solar
+                    Comece sua transformação energetica!
                   </button>
                 </a>
               </div>

@@ -1,114 +1,291 @@
 /* ================================
    Serviços & Projetos — Conquist
+   Estrutura: Seção → Serviços → Slider
 ================================ */
 
+/* ---------- Seção principal ---------- */
 .services {
   background-color: var(--fundo);
   text-align: center;
-  padding: 5rem 2rem;
+  padding: clamp(2.5rem, 6vw, 5rem) clamp(1rem, 4vw, 2rem);
+  overflow-x: hidden;
 }
 
-/* Título */
 .section-title {
-  font-size: 2.6rem;
-  margin-bottom: 3.5rem;
+  font-size: clamp(1.75rem, 4vw, 2.6rem);
+  margin-bottom: clamp(1.5rem, 3vw, 2rem);
   color: var(--azul);
   font-weight: 700;
+  line-height: 1.2;
 }
 
 /* ================================
-   Slick ajustes gerais
+   Área "O que a Conquist oferece"
 ================================ */
 
+.servicos-conquist {
+  max-width: 920px;
+  margin: 0 auto clamp(2rem, 4vw, 3.5rem);
+  text-align: left;
+  padding: 0 0.5rem;
+}
+
+.servicos-conquist-titulo {
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  color: var(--azul);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.servicos-conquist-intro {
+  font-size: clamp(0.9rem, 1.8vw, 1rem);
+  color: var(--cinza);
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+}
+
+.servicos-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.875rem;
+}
+
+.servico-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: clamp(0.875rem, 2vw, 1rem) clamp(1rem, 2.5vw, 1.25rem);
+  background-color: var(--branco);
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  border-left: 4px solid var(--laranja);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.servico-item:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transform: translateX(4px);
+}
+
+.servico-item-titulo {
+  font-size: clamp(0.95rem, 1.8vw, 1.05rem);
+  font-weight: 600;
+  color: var(--azul);
+}
+
+.servico-item-descricao {
+  font-size: clamp(0.85rem, 1.6vw, 0.95rem);
+  color: var(--cinza);
+  line-height: 1.55;
+}
+
+.projetos-titulo {
+  font-size: clamp(1.15rem, 2.5vw, 1.4rem);
+  color: var(--azul);
+  font-weight: 600;
+  margin-bottom: clamp(1rem, 2vw, 1.5rem);
+}
+
+/* ================================
+   Slider de projetos (Slick)
+================================ */
+
+.services .slick-slider {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 0.5rem;
+}
+
 .slick-slide {
-  padding: 0 15px;
+  padding: 0 10px;
 }
 
 .slick-list {
-  margin: 0 -15px;
+  margin: 0 -10px;
 }
 
-/* ================================
-   Card do serviço
-================================ */
-
+/* ---------- Card do projeto ---------- */
 .service-card {
   background-color: var(--branco);
-  border-radius: 18px;
-  padding: 1rem 1rem 2rem;
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  border-radius: 16px;
+  padding: clamp(0.75rem, 2vw, 1rem) clamp(0.75rem, 2vw, 1rem) clamp(1.25rem, 3vw, 2rem);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: left;
   cursor: pointer;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .service-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.12);
 }
-
-/* ================================
-   Imagem
-================================ */
 
 .service-img {
   width: 100%;
-  height: 180px;
+  height: clamp(160px, 28vw, 200px);
   object-fit: cover;
-  border-radius: 14px;
-  margin-bottom: 1.2rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
   transition: transform 0.3s ease;
 }
 
 .service-card:hover .service-img {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
-/* ================================
-   Texto
-================================ */
-
 .service-card h3 {
-  font-size: 1.3rem;
+  font-size: clamp(1.1rem, 2.2vw, 1.3rem);
   color: var(--cinza);
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.5rem;
   font-weight: 600;
+  line-height: 1.3;
+  flex: 0 0 auto;
 }
 
 .service-card p {
-  font-size: 0.95rem;
+  font-size: clamp(0.85rem, 1.6vw, 0.95rem);
   line-height: 1.6;
   color: var(--cinza);
+  flex: 1 1 auto;
 }
 
-/* ================================
-   Slick dots
-================================ */
-
+/* ---------- Dots do Slick ---------- */
 .slick-dots {
-  bottom: -40px;
+  bottom: clamp(-36px, -5vw, -40px);
+}
+
+.slick-dots li {
+  margin: 0 4px;
 }
 
 .slick-dots li button:before {
   font-size: 10px;
   color: var(--laranja);
-  opacity: 0.6;
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
 }
 
 .slick-dots li.slick-active button:before {
   opacity: 1;
 }
 
+.slick-dots li button:hover:before {
+  opacity: 0.9;
+}
+
+/* ---------- Setas laranja ---------- */
+.services .slick-prev:before,
+.services .slick-next:before {
+  color: var(--laranja);
+  opacity: 1;
+  font-size: 28px;
+}
+
+.services .slick-prev:hover:before,
+.services .slick-prev:focus:before,
+.services .slick-next:hover:before,
+.services .slick-next:focus:before {
+  color: var(--laranja);
+  opacity: 1;
+}
+
+.services .slick-prev.slick-disabled:before,
+.services .slick-next.slick-disabled:before {
+  opacity: 0.35;
+  color: var(--laranja);
+}
+
 /* ================================
    Responsividade
 ================================ */
 
-@media (max-width: 768px) {
-  .section-title {
-    font-size: 2.1rem;
+/* Tablet */
+@media (min-width: 600px) {
+  .servicos-lista {
+    gap: 1rem;
+  }
+
+  .slick-slide {
+    padding: 0 12px;
+  }
+
+  .slick-list {
+    margin: 0 -12px;
+  }
+}
+
+/* Desktop médio */
+@media (min-width: 900px) {
+  .servicos-conquist {
+    padding: 0;
+  }
+
+  .slick-slide {
+    padding: 0 15px;
+  }
+
+  .slick-list {
+    margin: 0 -15px;
+  }
+}
+
+/* Mobile: ajustes finos */
+@media (max-width: 599px) {
+  .services {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .servicos-conquist {
+    padding: 0;
+  }
+
+  .servico-item {
+    padding: 1rem 1rem;
   }
 
   .service-card {
     text-align: center;
+  }
+
+  .service-card h3,
+  .service-card p {
+    text-align: center;
+  }
+
+  .slick-slide {
+    padding: 0 8px;
+  }
+
+  .slick-list {
+    margin: 0 -8px;
+  }
+
+  .slick-dots {
+    bottom: -32px;
+  }
+}
+
+/* Telas muito pequenas */
+@media (max-width: 380px) {
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .servicos-conquist-titulo {
+    font-size: 1.15rem;
+  }
+
+  .projetos-titulo {
+    font-size: 1.1rem;
+  }
+
+  .service-img {
+    height: 140px;
   }
 }

@@ -13,10 +13,53 @@
   text-align: center;
 }
 
-/* Texto institucional */
-.clientes-descricao {
-  max-width: 800px;
-  margin: 0 auto 3.5rem;
+/* Grid dos cards (2 em cima, 2 embaixo) */
+.clientes-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem 2rem;
+  margin-bottom: 3.5rem;
+  max-width: 100%;
+}
+
+/* Texto institucional - cards */
+.clientes-descricao,
+.clientes-descricao2,
+.clientes-descricao3,
+.clientes-descricao4 {
+  max-width: 100%;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--cinza);
+  background-color: var(--branco);
+  border-left: 5px solid var(--laranja);
+  padding: 1.8rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  text-align: left;
+}
+
+.clientes-descricao,
+.clientes-descricao2,
+.clientes-descricao3,
+.clientes-descricao4 h3 {
+  color: var(--azul);
+  font-size: 1.4rem;
+  margin-bottom: 0.6rem;
+}
+
+.clientes-descricao p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--cinza);
+}
+
+.clientes-descricao2 p,
+.clientes-descricao3 p,
+.clientes-descricao4 p {
+  margin: 0;
   font-size: 1rem;
   line-height: 1.7;
   color: var(--cinza);
@@ -32,6 +75,28 @@
 
 .slick-list {
   margin: 0 -15px;
+}
+
+/* Setas laranja - boa visualização */
+.clientes .slick-prev:before,
+.clientes .slick-next:before {
+  color: var(--laranja);
+  opacity: 1;
+  font-size: 28px;
+}
+
+.clientes .slick-prev:hover:before,
+.clientes .slick-prev:focus:before,
+.clientes .slick-next:hover:before,
+.clientes .slick-next:focus:before {
+  color: var(--laranja);
+  opacity: 1;
+}
+
+.clientes .slick-prev.slick-disabled:before,
+.clientes .slick-next.slick-disabled:before {
+  opacity: 0.35;
+  color: var(--laranja);
 }
 
 /* ================================
@@ -87,7 +152,15 @@
 ================================ */
 
 @media (max-width: 768px) {
-  .clientes-descricao {
+  .clientes-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .clientes-descricao,
+  .clientes-descricao2,
+  .clientes-descricao3,
+  .clientes-descricao4 {
     font-size: 0.95rem;
   }
 

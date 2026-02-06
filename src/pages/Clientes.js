@@ -43,12 +43,35 @@ function Clientes() {
     <section id="clientes" className="clientes">
       <div className="clientes-container">
         <h2 className="section-title">Clientes & Parcerias Estratégicas</h2>
-
-        <p className="clientes-descricao">
-          Atuamos em conjunto com empresas parceiras e grandes players do setor energético,
-          entregando soluções eficientes em energia solar, geração distribuída e manutenção
-          especializada, sempre com foco em qualidade, segurança e resultados.
-        </p>
+        <div className="clientes-cards-grid">
+          <div className="clientes-descricao">
+            <h3>Nossa Estratégia</h3>
+            <p>
+              Atuamos em conjunto com empresas parceiras e grandes players do setor energético,
+              entregando soluções eficientes em energia solar, geração distribuída e manutenção
+              especializada, sempre com foco em qualidade, segurança e resultados.
+            </p>
+          </div>
+          <div className="clientes-descricao2">
+          <h3>Nossa Equipe</h3>
+            <p>
+              Nossa equipe de especialistas está comprometida em fornecer soluções de alta qualidade,
+              garantindo eficiência energética e confiabilidade para nossos clientes.
+            </p>
+          </div>
+          <div className="clientes-descricao3">
+          <h3>Nossos Clientes</h3>
+            <p>
+            Atuamos em parceria com empresas de renome no mercado, unindo experiência, qualidade técnica e compromisso com prazos para entregar soluções eficientes. Essa atuação colaborativa garante resultados concretos, alto padrão de execução e total satisfação aos nossos clientes em cada projeto desenvolvido.
+            </p>
+          </div>
+          <div className="clientes-descricao4">
+          <h3>Nossos valores e compromissos com nossos clientes</h3>
+            <p>
+              Na Conquist Energy, valorizamos a transparência e a confiança, sempre buscando soluções eficientes e sustentáveis para nossos clientes.
+            </p>
+          </div>
+        </div>
 
         <Slider {...settings}>
           {clientes.map((cliente, index) => (
